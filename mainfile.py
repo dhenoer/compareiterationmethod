@@ -12,7 +12,8 @@ class StopWatch:
 
     def start(self):
         '''start stopwatch'''
-        self._start = time.time()
+        #self._start = time.time()
+        self._start = time.perf_counter()
 
     def restart(self):
         '''restart stopwath'''
@@ -20,14 +21,16 @@ class StopWatch:
 
     def stop(self):
         '''stop stopwatch. elapsed will be counted based on stop time'''
-        self._stop = time.time()
+        #self._stop = time.time()
+        self._stop = time.perf_counter()
 
     def elaps(self):
         '''return elapsed time in seconds'''
         if self._stop:
             return(self._stop - self._start)
         else:
-            return(time.time()-self.start)
+            #return(time.time()-self.start)
+            return(time.perf_counter()-self.start)
 
 class RekapProses:
     ''' class RekapProses
@@ -112,13 +115,13 @@ if __name__ == '__main__':
     print('beberapa metode / gaya pemrograman\n')
 
     # tentukan random seed untuk menghasilkan output yg sama
-    random.seed('coba')
+    #random.seed('coba')
 
     # siapkan rekap
     rekap = RekapProses()
 
     # trial several times
-    trial = random.randint(1,50)
+    trial = random.randint(1,15)
     for t in range(trial):
 
         print('## TRIAL', t+1, '/',trial,'##\n')
