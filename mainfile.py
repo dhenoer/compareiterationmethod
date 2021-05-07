@@ -68,7 +68,7 @@ class RekapProses:
             speed = maxtime / tv
             print(tk.ljust(lenlabel),'=', '%4.6f'%tv,
                 ('*'*int(20*tv/maxtime)).ljust(20), '%3.1fx'%speed)
-        print('Banyaknya data:', self._cases)
+        print('Banyaknya data:', self._cases, 'baris')
         print('Banyaknya trial:', self._trials//len(self._time_record.items()), '\n')
 
 def metode(m):
