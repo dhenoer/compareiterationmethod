@@ -104,7 +104,13 @@ def metode(m):
         rekap.mulai('Metode Empat')
         data_copy = [ d[1] for d in data]
         rekap.selesai(data_copy)
-
+        
+    elif m == 5:
+        # mulai baca kolom 2 dg metode 5
+        rekap.mulai('Metode Lima')
+        data_copy = list(map(lambda x: x[1], data))
+        rekap.selesai(data_copy)
+        
     else:
         print('Metode tidak ditemukan')
 
@@ -139,7 +145,7 @@ if __name__ == '__main__':
         print('Data Top5 =', data[:5], '...\n')
 
         # acak metode
-        mets = [1,2,3,4]
+        mets = [1,2,3,4,5]
         random.shuffle(mets)
         for m in mets:
             metode(m)
