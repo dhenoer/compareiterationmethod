@@ -18,7 +18,7 @@ Kita ingin retrieve data di atas untuk mendapatkan data_copy sbb:
 Beberapa metode / caranya untuk mendapatkan hasil yang sama 
 (tanpa import modul yang lain) adalah sbb:
 
-## Metode 1
+## Metode Satu
 
     data_copy = []
     for i in range(len(data)):
@@ -38,31 +38,37 @@ Beberapa metode / caranya untuk mendapatkan hasil yang sama
 
     data_copy = [ d[1] for d in data ]
 
+## Metode Lima
+
+    data_copy = list(map(lambda x: x[1], data))
+
+
 ## Hasil
 
-Saya baru menemukan 4 metode yang dapat saya rangkum.
+Saya baru menemukan 5 metode yang dapat saya rangkum.
 Barangkali teman ada lagi metode lain? 
 
 Dari ke-empat metode tersebut, saya hitung waktu yang dibutuhkan 
 menggunakan script python dg fitur:
     
-   * Banyaknya trial digenerate secara acak 1 s.d 10
-   * Banyaknya data digenerate secara acak 1ribu sd 900ribu per trial
-   * Urutan memproses metode dilakukan acak per trial
+* Banyaknya trial digenerate secara acak 1 s.d 10
+* Banyaknya data digenerate secara acak 1ribu sd 900ribu per trial
+* Urutan memproses metode dilakukan acak per trial
    
 Penampakan hasil salah satu output yg dijalankan pada notebook i5 saya sbb:
 
-    ## Hasil Rekap Waktu (seconds) dan Speed
-    Metode Dua   = 0.164624 *************        1.5x
-    Metode Tiga  = 0.193826 ***************      1.3x
-    Metode Satu  = 0.247912 ******************** 1.0x
-    Metode Empat = 0.100872 ********             2.5x
-    Banyaknya data: 10780000
+    # Hasil Rekap Waktu (seconds) dan Speed
+    Metode Dua   = 0.149171 ************         1.6x
+    Metode Tiga  = 0.178067 **************       1.4x
+    Metode Lima  = 0.184237 ***************      1.3x
+    Metode Satu  = 0.241642 ******************** 1.0x
+    Metode Empat = 0.094637 *******              2.6x
+    Banyaknya data: 11935000
     Banyaknya trial: 7 
 
 ## Kesimpulan
 
-* Ternyata kecepatan Metode Empat 2.5x dari Metode Satu. 
-* Diikuti Metode Dua dg kecepatan 1.5x Metode Satu.
+* Ternyata kecepatan Metode Empat 2.6x dari Metode Satu. 
+* Diikuti Metode Dua dg kecepatan 1.6x Metode Satu.
 
 tags: #sharing #tips
